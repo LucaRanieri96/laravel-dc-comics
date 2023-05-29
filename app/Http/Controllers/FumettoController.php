@@ -36,7 +36,19 @@ class FumettoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type,
+        ];
+
+        Fumetto::create($data);
+
+        return to_route('comics.index');
     }
 
     /**
