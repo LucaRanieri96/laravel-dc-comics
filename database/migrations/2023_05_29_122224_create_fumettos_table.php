@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('fumettos', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 200);
+            $table->text('description');
+            $table->string('thumb', 500);
+            $table->string('price');
+            $table->date('sale_date');
+            $table->string('type', 20);
             $table->timestamps();
         });
     }
