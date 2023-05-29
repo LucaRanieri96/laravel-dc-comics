@@ -54,12 +54,12 @@ class FumettoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Fumetto  $fumetto
+     * @param  \App\Models\Fumetto  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Fumetto $fumetto)
+    public function show(Fumetto $comic)
     {
-        //
+        return view('show', compact('comic'));
     }
 
     /**
