@@ -91,9 +91,9 @@ class FumettoController extends Controller
             'type' => $request->type,
         ];
 
-        Fumetto::update($data);
+        $comic->update($data);
 
-        return to_route('admin.comics.index');
+        return to_route('admin.index');
     }
 
     /**
@@ -105,6 +105,6 @@ class FumettoController extends Controller
     public function destroy(Fumetto $comic)
     {
         $comic->delete();
-        return to_route('admin.comics.index'); 
+        return to_route('admin.index'); 
     }
 }

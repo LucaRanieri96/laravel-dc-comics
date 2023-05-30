@@ -3,7 +3,7 @@
 @section('content')
     <div class="container py-5">
         <h1>Comics List</h1>
-        
+
         <a class="btn btn-primary my-2" href="{{ route('admin.comics.create') }}" role="button">New Comic</a>
 
         <div class="table-responsive">
@@ -34,7 +34,7 @@
 
                                 <form action="{{ route('admin.comics.destroy', $comic->id) }}" method="post">
                                     @csrf
-                                    @method('delete')
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </td>

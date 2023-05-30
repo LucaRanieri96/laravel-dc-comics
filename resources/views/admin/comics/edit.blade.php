@@ -6,7 +6,7 @@
 <div class="container py-5">
     <h5 class="text-uppercase text-muted my-4">Edit: {{$comic->title}}</h5>
 
-    <form action="{{route('admin.comics.edit', $comic->id)}}" method="post">
+    <form action="{{route('admin.comics.update', $comic->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -21,8 +21,8 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" name="description" id="description" class="form-control" placeholder="Comic description here" aria-describedby="descriptionHelper">
-            <small id="descriptionHelper" class="text-muted" value="{{$comic->description}}">Type the description of the comic max 500 characters</small>
+            <input type="text" name="description" id="description" class="form-control" placeholder="Comic description here" aria-describedby="descriptionHelper" value="{{$comic->description}}">
+            <small id="descriptionHelper" class="text-muted">Type the description of the comic max 500 characters</small>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">price</label>
@@ -31,8 +31,8 @@
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">sale date</label>
-            <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="Comic sale_date here " aria-describedby="sale_dateHelper">
-            <small id="sale_dateHelper" class="text-muted" value="{{$comic->sale_date}}">Type the sale date of the comic</small>
+            <input type="text" name="sale_date" id="sale_date" class="form-control" placeholder="Comic sale_date here " aria-describedby="sale_dateHelper" value="{{$comic->sale_date}}">
+            <small id="sale_dateHelper" class="text-muted">Type the sale date of the comic</small>
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Type</label>

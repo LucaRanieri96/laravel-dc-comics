@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('fumettos', function (Blueprint $table) {
             $table->id();
             $table->string('title', 200);
-            $table->text('description');
-            $table->string('thumb', 500)->nullable();
-            $table->string('price', 50);
-            $table->string('sale_date', 50);
-            $table->string('type', 20);
+            $table->text('description')->nullable();
+            $table->string('thumb', 255)->nullable();
+            $table->string('price', 50)->nullable();
+            $table->string('sale_date', 50)->nullable();
+            $table->string('type', 50)->nullable();
             $table->timestamps();
         });
     }
