@@ -17,7 +17,7 @@ class FumettoController extends Controller
         $comics = Fumetto::all();
         return view('comics', compact('comics'));
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -93,6 +93,5 @@ class FumettoController extends Controller
      */
     public function destroy(Fumetto $fumetto)
     {
-        //
     }
 }

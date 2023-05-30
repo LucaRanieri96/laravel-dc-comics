@@ -17,4 +17,9 @@ use App\Http\Controllers\Guests\PageController;
 
 Route::get('/', [PageController::class, 'index'])->name('welcome');
 
+Route::get('/admin', [PageController::class, 'admin'])->name('admin.index');
+
+
+Route::get('/admin/comics/create', [FumettoController::class, 'create'])->name('admin.comics.create');
+
 Route::resource('comics', FumettoController::class);
