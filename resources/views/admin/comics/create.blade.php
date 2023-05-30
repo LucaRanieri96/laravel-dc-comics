@@ -3,8 +3,7 @@
 
 @section('content')
 
-
-<div class="container">
+<div class="container py-5">
     <h5 class="text-uppercase text-muted my-4">Add a new Comic</h5>
 
     <form action="{{route('comics.store')}}" method="post">
@@ -12,7 +11,7 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="Comic title here " aria-describedby="titleHelper" required>
+            <input type="text" name="title" class="form-control" placeholder="Comic title here " aria-describedby="titleHelper" required>
             <small id="titleHelper" class="text-muted">Type the title of the comic max 50 characters</small>
         </div>
         <div class="mb-3">

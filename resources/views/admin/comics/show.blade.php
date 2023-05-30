@@ -2,15 +2,20 @@
 
 
 @section('content')
+    <div id="banner"></div>
+    <div id="blue-bg-main">
+        <div class="container">
+            <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+        </div>
+    </div>
 
-<div class="container py-5 text-center">
-    <img src="{{$comic->thumb}}" alt="">
-    <h1>{{$comic->title}}</h1>
-    <div><strong>Description:</strong>  {{$comic->description}}</div>
-    <div><strong>Sale date:</strong>  {{$comic->sale_date}}</div>
-    <div><strong>Type:</strong> {{$comic->type}}</div>
-    <div><strong>Price:</strong>  {{$comic->price}}</div>
-</div>
-
-
+    <div>
+        <div class="container py-5">
+            <h2>{{ $comic->title }}</h2>
+            <div class="pt-1"><strong>Type:</strong> {{ $comic->type }}</div>
+            <div class="pt-1"><strong>Sale date:</strong> {{ $comic->sale_date }}</div>
+            <div class="pt-1"><strong>Description:</strong> {{ $comic->description }}</div>
+            <div class="pt-2"><strong>U.S.Price:</strong> {{ $comic->price }}</div>
+        </div>
+    </div>
 @endsection
