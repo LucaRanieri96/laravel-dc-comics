@@ -24,4 +24,6 @@ Route::get('/admin/comics/create', [FumettoController::class, 'create'])->name('
 
 Route::get('/admin/comics/edit', [FumettoController::class, 'edit'])->name('admin.comics.edit');
 
+Route::get('/admin/comics/destroy', [FumettoController::class, 'destroy'])->name('admin.comics.destroy');
+
 Route::resource('comics', FumettoController::class);

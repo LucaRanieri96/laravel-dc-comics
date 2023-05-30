@@ -77,7 +77,7 @@ class FumettoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Fumetto  $comic
+     * @param  \App\Models\Fumetto $comic
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Fumetto $comic)
@@ -93,7 +93,7 @@ class FumettoController extends Controller
 
         Fumetto::update($data);
 
-        return to_route('admin.comics.index')->with('message', 'comic updated');
+        return to_route('admin.comics.index');
     }
 
     /**
@@ -104,5 +104,7 @@ class FumettoController extends Controller
      */
     public function destroy(Fumetto $comic)
     {
+        $comic->delete();
+        return to_route('admin.comics.index'); 
     }
 }
