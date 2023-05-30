@@ -25,7 +25,7 @@ class FumettoController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class FumettoController extends Controller
      */
     public function show(Fumetto $comic)
     {
-        return view('show', compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**

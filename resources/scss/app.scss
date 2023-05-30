@@ -1,8 +1,138 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+$primary: #0282f9;
+$dark: #303030;
+$darker: #1c1c1c;
+$light: white;
 
-.card{
-    height: 30rem !important;
-    img{
-        height: 29.9rem !important;
+header {
+    background-color: white;
+    input {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 2px solid rgb(0, 145, 255);
+    }
+}
+.nav {
+    gap: 2rem;
+    a {
+        text-decoration: none;
+        color: rgb(92, 92, 92);
+        font-weight: 500;
+        height: 100%;
+
+        &:hover {
+            cursor: pointer;
+            color: $primary;
+            border-bottom: 4px solid $primary;
+        }
+    }
+}
+.blue {
+    color: $primary;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.blue-bg {
+    color: white;
+    background-color: rgb(0, 145, 255);
+    span {
+        font-size: 10px;
+    }
+}
+
+#blue-bg-main {
+    background-color: rgb(0, 145, 255);
+    height: 80px;
+    .container {
+        position: relative;
+        img {
+            position: absolute;
+            width: 200px;
+            bottom: -50px;
+            border: 2px solid white;
+        }
+    }
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.main_top {
+    background-color: $darker;
+    color: $light;
+}
+
+.main_bottom {
+    background-color: $primary;
+    color: $light;
+}
+
+.footer_top {
+    background-image: url("/assets/images/footer-bg.jpg");
+    color: $light;
+    ul {
+        list-style-type: none;
+        color: grey;
+        li:hover {
+            color: $light;
+            cursor: pointer;
+        }
+    }
+}
+
+.footer_bottom {
+    padding: 1.5rem 0;
+    background-color: $dark;
+    color: $light;
+}
+
+#sign_button {
+    padding: 1rem;
+    border: 2px solid $primary;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.bg_dc {
+    background-image: url("/assets/images/dc-logo-bg.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.main_top {
+    position: relative;
+}
+#title {
+    padding: 0.6rem;
+    background-color: $primary;
+    position: absolute;
+    float: left;
+    top: -26.39px;
+    h3 {
+        margin: 0;
+    }
+}
+
+#banner {
+    height: 600px;
+    background-image: url(/assets/images/jumbotron.jpg);
+    background-size: cover;
+}
+
+img {
+    width: 100%;
+}
+a {
+    color: grey;
+    text-decoration: none;
+    &:hover {
+        color: white;
     }
 }
