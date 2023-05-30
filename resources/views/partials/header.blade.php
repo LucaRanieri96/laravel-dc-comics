@@ -10,8 +10,12 @@
         <img src="/assets/images/dc-logo.png" alt="" />
       </div>
       <div class="nav">
-        <a class="nav-link {{ Route::currentRouteName() === 'welcome' ? 'bg-danger text-white' : '' }}   " href="{{ route('welcome')}}" aria-current="page">HOME</a>
-        <a class="nav-link {{ Route::currentRouteName() === 'comics.index' ? 'bg-danger text-white' : '' }} " href="{{ route('comics.index')}}">COMICS</a>
+        <div>
+            <a href="{{ route('welcome')}}" aria-current="page">HOME</a>
+        </div>
+        <div>
+            <a href="{{ route('comics.index')}}">COMICS</a>
+        </div>
         <div><a href="#">TV</a></div>
         <div><a href="#">GAMES</a></div>
         <div><a href="#">COLLECTIBLES</a></div>
