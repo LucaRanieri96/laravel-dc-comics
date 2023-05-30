@@ -22,4 +22,6 @@ Route::get('/admin', [PageController::class, 'admin'])->name('admin.index');
 
 Route::get('/admin/comics/create', [FumettoController::class, 'create'])->name('admin.comics.create');
 
+Route::get('/admin/comics/edit', [FumettoController::class, 'edit'])->name('admin.comics.edit');
+
 Route::resource('comics', FumettoController::class);

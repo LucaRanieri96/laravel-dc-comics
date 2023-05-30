@@ -22,6 +22,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">IMG</th>
                     <th scope="col">TITLE</th>
+                    <th scope="col">Functions</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,9 @@
                         <img class="img-fluid" src="{{$comic->thumb}}" alt="">
                     </td>
                     <td>{{$comic->title}}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="{{route('admin.comics.edit', $comic->id )}}" role="button">Edit</a>
+                    </td>
 
                 </tr>
 
