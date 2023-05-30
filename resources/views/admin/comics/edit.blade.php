@@ -17,7 +17,7 @@
         <div class="mb-3">
             <label for="image" class="form-label">Thumb</label>
             <input type="text" name="image" id="image" class="form-control" placeholder="Comic image here " aria-describedby="imageHelper" value="{{$comic->thumb}}">
-            <small id="imageHelper" class="text-muted">Type the image of the comic max 500 characters</small>
+            <small id="imageHelper" class="text-muted">Type the image of the comic max 255 characters</small>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
