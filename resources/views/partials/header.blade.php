@@ -14,7 +14,7 @@
             <a href="{{ route('welcome')}}" aria-current="page">HOME</a>
         </div>
         <div>
-            <a href="{{ route('comics.index')}}">COMICS</a>
+            <a href="{{ route('admin.comics.index')}}">COMICS</a>
         </div>
         <div><a href="#">TV</a></div>
         <div><a href="#">GAMES</a></div>

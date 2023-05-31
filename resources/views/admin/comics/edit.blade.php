@@ -4,6 +4,13 @@
 @section('content')
 
 <div class="container py-5">
+    @if (session('message'))
+    <div class="alert alert-primary" role="alert">
+        <strong>{{session('message')}}</strong>
+    </div>
+
+    @endif
+    
     <h5 class="text-uppercase text-muted my-4">Edit: {{$comic->title}}</h5>
 
     <form action="{{route('admin.comics.update', $comic->id)}}" method="post">
@@ -15,8 +22,8 @@
             <small id="titleHelper" class="text-muted">Type the title of the comic max 50 characters</small>
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Thumb</label>
-            <input type="text" name="image" id="image" class="form-control" placeholder="Comic image here " aria-describedby="imageHelper" value="{{$comic->thumb}}">
+            <label for="thumb" class="form-label">Thumb</label>
+            <input type="text" name="thumb" id="thumb" class="form-control" placeholder="Comic image here " aria-describedby="imageHelper" value="{{$comic->thumb}}">
             <small id="imageHelper" class="text-muted">Type the image of the comic max 255 characters</small>
         </div>
         <div class="mb-3">

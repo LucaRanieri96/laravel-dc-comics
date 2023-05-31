@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container py-5">
+
+@if (session('message'))
+<div class="container py-2">
+    <div class="alert alert-success" role="alert">
+        <strong>{{session('message')}}</strong>
+    </div>
+</div>
+@endif
+
+    <div class="container pb-5">
         <h1>Comics List</h1>
 
         <a class="btn btn-primary my-2" href="{{ route('admin.comics.create') }}" role="button">New Comic</a>

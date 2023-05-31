@@ -9,4 +9,5 @@ class Fumetto extends Model
 {
     use HasFactory;
     protected $fillable = ['id', 'title', 'description', 'thumb', 'price','sale_date', 'type'];
+    protected $table = 'fumettos';
 }

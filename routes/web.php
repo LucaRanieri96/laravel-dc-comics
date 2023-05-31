@@ -20,12 +20,12 @@ Route::get('/', [PageController::class, 'index'])->name('welcome');
 Route::get('/admin', [PageController::class, 'admin'])->name('admin.index');
 
 
-Route::get('/admin/comics/create', [FumettoController::class, 'create'])->name('admin.comics.create');
+////Route::get('/admin/comics/create', [FumettoController::class, 'create'])->name('admin.comics.create');
 
-Route::get('/admin/comics/{comic}/edit', [FumettoController::class, 'edit'])->name('admin.comics.edit');
+//Route::get('/admin/comics/{comic}/edit', [FumettoController::class, 'edit'])->name('admin.comics.edit');
 
-Route::put('/admin/comics/{comic}', [FumettoController::class, 'update'])->name('admin.comics.update');
+//Route::put('/admin/comics/{comic}', [FumettoController::class, 'update'])->name('admin.comics.update');
 
-Route::delete('/admin/comics/{comic}', [FumettoController::class, 'destroy'])->name('admin.comics.destroy');
+//Route::delete('/admin/comics/{comic}', [FumettoController::class, 'destroy'])->name('admin.comics.destroy');
 
-Route::resource('comics', FumettoController::class);
+Route::resource('/admin/comics', FumettoController::class, ['as'=> 'admin']);
