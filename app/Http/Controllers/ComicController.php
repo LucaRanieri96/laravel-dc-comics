@@ -38,8 +38,11 @@ class ComicController extends Controller
     {
         $val_data = $request->validate([
             'title' => 'required|min:5|max:200',
+            'description' => 'nullable',
             'thumb' => 'nullable|max:255',
             'price' => 'nullable',
+            'sale_date' => 'nullable',
+            'type' => 'nullable',
 
         ]);
         // dd($request->all());

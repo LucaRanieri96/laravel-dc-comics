@@ -28,9 +28,9 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Thumb</label>
-            <input type="text" name="image" id="image" class="form-control" placeholder="Comic image here " aria-describedby="imageHelper">
-            <small id="imageHelper" class="text-muted">Type the image of the comic max 500 characters</small>
+            <label for="thumb" class="form-label">Thumb</label>
+            <input type="text" name="thumb" id="thumb" class="form-control" placeholder="Comic thumb here " aria-describedby="thumbHelper">
+            <small id="thumbHelper" class="text-muted">Type the image of the comic max 500 characters</small>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
