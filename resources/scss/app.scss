@@ -120,6 +120,11 @@ header {
     }
 }
 
+#titles{
+    font-weight: 600;
+    font-size: larger;
+}
+
 #banner {
     height: 600px;
     background-image: url(/assets/images/jumbotron.jpg);
@@ -130,7 +135,7 @@ img {
     width: 100%;
 }
 a {
-    color: grey;
+    color: rgb(214, 214, 214);
     text-decoration: none;
     &:hover {
         color: white;
