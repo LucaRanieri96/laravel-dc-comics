@@ -8,7 +8,9 @@
         <div id="title">
           <h3>CURRENT SERIES</h3>
         </div>
-          <a href="{{ route('admin.index') }}">Admin View</a>
+        <div>
+          <a class="btn btn-outline-light" href="{{ route('admin.index') }}">Admin View</a>
+        </div>
       </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 py-5">
           @forelse ($comics as $comic)

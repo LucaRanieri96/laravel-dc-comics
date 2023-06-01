@@ -35,7 +35,7 @@
                 <input type="text" name="thumb" id="thumb"
                     class="form-control @error('thumb') is-invalid @enderror" placeholder="Comic thumb here "
                     aria-describedby="thumbHelper" value="{{ old('thumb', $comic->thumb) }}">
-                <small id="thumbHelper" class="text-muted">Type the image of the comic max 500 characters</small>
+                <small id="thumbHelper" class="text-muted">Type the image of the comic max 255 characters</small>
                 @error('thumb')
                     <div class="alert alert-danger" role="alert">
                         <strong>Thumb, Error:</strong>{{ $message }}
@@ -47,7 +47,7 @@
                 <input type="text" name="description" id="description"
                     class="form-control @error('description') is-invalid @enderror" placeholder="Comic description here "
                     aria-describedby="descriptionHelper" value="{{ old('description', $comic->description) }}">
-                <small id="descriptionHelper" class="text-muted">Type the description of the comic max 500
+                <small id="descriptionHelper" class="text-muted">Type the description of the comic max 1000
                     characters</small>
                 @error('description')
                     <div class="alert alert-danger" role="alert">
