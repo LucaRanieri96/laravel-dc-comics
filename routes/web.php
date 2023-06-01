@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\FumettoController;
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guests\PageController;
 
@@ -28,4 +28,4 @@ Route::get('/admin', [PageController::class, 'admin'])->name('admin.index');
 
 //Route::delete('/admin/comics/{comic}', [FumettoController::class, 'destroy'])->name('admin.comics.destroy');
 
-Route::resource('/admin/comics', FumettoController::class, ['as'=> 'admin']);
+Route::resource('/admin/comics', ComicController::class, ['as'=> 'admin']);
