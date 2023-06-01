@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Guests;
-use App\Models\Fumetto;
+use App\Models\Comic;
 use App\Http\Controllers\Controller;
 
 class PageController extends Controller
@@ -12,7 +12,7 @@ class PageController extends Controller
     }
     public function admin()
     {
-        $comics = Fumetto::all();
+        $comics = Comic::all();
         return view('admin.comics.index', compact('comics'));
     }
 

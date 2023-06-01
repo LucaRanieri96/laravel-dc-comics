@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fumetto;
+use App\Models\Comic;
 use Illuminate\Http\Request;
 
-class FumettoController extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FumettoController extends Controller
      */
     public function index()
     {
-        $comics = Fumetto::all();
+        $comics = Comic::all();
         return view('comics', compact('comics'));
     }
  
@@ -36,17 +36,23 @@ class FumettoController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'price' => $request->price,
-            'sale_date' => $request->sale_date,
-            'type' => $request->type,
-        ];
+        $val_data = $request->validate([
+            'title' => 'required|min:5|max:200',
+            'thumb' => 'nullable|max:255',
+            'price' => 'nullable',
 
-        Fumetto::create($data);
+        ]);
+        // dd($request->all());
+        // $data = [
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        //     'thumb' => $request->thumb,
+        //     'price' => $request->price,
+        //     'sale_date' => $request->sale_date,
+        //     'type' => $request->type,
+        // ];
+
+        Comic::create($val_data);
 
         return to_route('admin.index')->with('message', 'is add new');
     }
@@ -54,21 +60,21 @@ class FumettoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Fumetto $comic
+     * @param  \App\Models\Comic $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Fumetto $comic)
+    public function show(Comic $comic)
     {
-        return view('admin.comics.admin', compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Fumetto $comic
+     * @param  \App\Models\Comic $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fumetto $comic)
+    public function edit(Comic $comic)
     {
         return view('admin.comics.edit', compact('comic'));
     }
@@ -77,10 +83,10 @@ class FumettoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Fumetto $fumetto
+     * @param  \App\Models\Comic $Comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fumetto $fumetto)
+    public function update(Request $request, Comic $Comic)
     {
         //dd($request->all());
         $data = [
@@ -93,20 +99,20 @@ class FumettoController extends Controller
         ];
         //dd($data);
 
-        $fumetto->update($data);
+        $Comic->update($data);
 
-        return to_route('admin.comics.index')->with('message', 'comic updated');
+        return to_route('admin.index')->with('message', 'comic updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Fumetto $comic
+     * @param  \App\Models\Comic $comic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fumetto $comic)
+    public function destroy(Comic $comic)
     {
         $comic->delete();
-        return to_route('admin.comics.index')->with('message', 'comic deleted'); 
+        return to_route('admin.index')->with('message', 'comic deleted'); 
     }
 }

@@ -4,15 +4,28 @@
 @section('content')
 
 <div class="container py-5">
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
     <h5 class="text-uppercase text-muted my-4">Add a new Comic</h5>
 
-    <form action="{{route('comics.store')}}" method="post">
+    <form action="{{route('admin.comics.store')}}" method="post">
         @csrf
 
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" name="title" class="form-control" placeholder="Comic title here " aria-describedby="titleHelper" required>
+            <label for="title" class="form-label @error ('title') is-invalid @enderror">Title</label>
+            <input type="text" name="title" class="form-control" placeholder="Comic title here " aria-describedby="titleHelper" required value="{{old('title')}}">
             <small id="titleHelper" class="text-muted">Type the title of the comic max 50 characters</small>
+            @error('title')
+            <div class="alert alert-danger" role="alert">
+                <strong>Name, Error:</strong>{{$message}}
+            </div>
+            
+            @enderror
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Thumb</label>

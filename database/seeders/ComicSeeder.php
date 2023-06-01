@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Fumetto;
+use App\Models\Comic;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class FumettoSeeder extends Seeder
+class ComicSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -18,7 +18,7 @@ class FumettoSeeder extends Seeder
         $comics = config('comics');
 
         foreach ($comics as $comic) {
-            $newComic = new Fumetto();
+            $newComic = new Comic();
             $newComic->title = $comic['title'];
             $newComic->description = $comic['description'];
             $newComic->thumb = $comic['thumb'];

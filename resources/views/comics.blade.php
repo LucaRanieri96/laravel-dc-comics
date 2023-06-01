@@ -14,7 +14,7 @@
           @forelse ($comics as $comic)
               <div class="col">
                   <img src="{{ $comic->thumb }}" class="img-fluid rounded-start" alt="{{ $comic->title }}">
-                  <a href="{{ route('comics.show', $comic->id) }}" class="mt-2">{{ $comic->title }}</a>
+                  <a href="{{ route('admin.comics.show', $comic->id) }}" class="mt-2">{{ $comic->title }}</a>
               </div>
           @empty
               <tr scope="row">
